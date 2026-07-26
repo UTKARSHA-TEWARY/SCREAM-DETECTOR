@@ -13,7 +13,7 @@ export default function Dashboard() {
   const timerRef = useRef(null);// to store interval ID for timer
   const isRecordingRef = useRef(false);// to track recording state across re-renders
 
-  const API_URL = "http://localhost:5173/api/scream/detect";
+  const API_URL = "https://scream-detector.onrender.com/api/scream/detect";
 
   // ⏱ Timer
   useEffect(() => {

@@ -27,8 +27,8 @@ export default function Auth() {
     try {
       const res = await fetch(
         isSignUp
-          ? "http://localhost:5000/api/auth/signup"
-          : "http://localhost:5000/api/auth/login",
+          ? "https://scream-detector.onrender.com/api/auth/signup"
+          : "https://scream-detector.onrender.com/api/auth/login",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

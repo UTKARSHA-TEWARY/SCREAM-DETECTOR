@@ -14,7 +14,7 @@ export default function Signup() {
 
   const handleSignup = async () => {
     try {
-      await axios.post('http://localhost:5000/api/auth/signup', form, {
+      await axios.post('https://scream-detector.onrender.com/api/auth/signup', form, {
         withCredentials: true
       });
       alert('Signup success!');
