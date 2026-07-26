@@ -29,8 +29,11 @@ app.use(cookieParser());   // <-- Needed to parse cookies
 
 // CORS setup
 app.use(cors({
-  origin: 'http://localhost:5173',  // your frontend URL
-  credentials: true,                 // allow cookies with requests
+  origin: [
+    "http://localhost:5173",
+   "https://scream-detector-1.onrender.com" // ❌ Backend URL
+  ],
+  credentials: true,
 }));
 
 // Routes
