@@ -1,0 +1,120 @@
+/* Full screen */
+.screen {
+  height: 100svh;
+  width: 100vw;
+  background: linear-gradient(135deg, #0f4c5c, #1b9aaa);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Glass card */
+.voice-card {
+  width: 90%;
+  max-width: 360px;
+  height: 520px;
+
+  padding: 30px 20px;
+  border-radius: 28px;
+
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  color: white;
+}
+
+/* Title */
+.title {
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  opacity: 0.9;
+}
+
+/* Timer circle */
+.circle {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.45);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 2.2rem;
+  font-weight: 500;
+}
+
+.circle.active {
+  border-color: #ffcc70;
+  box-shadow: 0 0 20px rgba(255, 204, 112, 0.6);
+}
+
+/* Waveform */
+.waveform {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 4px;
+
+  height: 80px;
+  width: 100%;
+}
+
+.waveform span {
+  width: 4px;
+  height: 20px;
+  background: white;
+  opacity: 0.75;
+  border-radius: 2px;
+}
+
+.waveform.animate span {
+  animation: wave 1s infinite ease-in-out;
+}
+
+.waveform.animate span:nth-child(even) {
+  animation-delay: 0.2s;
+}
+
+@keyframes wave {
+  0% { height: 12px; }
+  50% { height: 42px; }
+  100% { height: 12px; }
+}
+
+/* Play / Pause button */
+.control-btn {
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  font-size: 1.8rem;
+
+  border: none;
+  cursor: pointer;
+
+  background: rgba(255, 255, 255, 0.9);
+  color: #1b9aaa;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease;
+}
+
+.control-btn:hover {
+  transform: scale(1.08);
+}
+
+/* Status text */
+.status {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  margin-bottom: 8px;
+  text-align: center;
+}

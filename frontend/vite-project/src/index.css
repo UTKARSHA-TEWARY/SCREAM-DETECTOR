@@ -1,0 +1,144 @@
+:root {
+  --background-light: linear-gradient(to bottom right, #e0eafc, #cfdef3);
+  --background-dark: linear-gradient(to bottom right, #0f2027, #2c5364);
+  --input-light: rgba(255, 255, 255, 0.7);
+  --input-dark: rgba(255, 255, 255, 0.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: sans-serif;
+  transition: background 0.3s, color 0.3s;
+  height: 100%;
+}
+
+/* Light/Dark mode background */
+body {
+  background: var(--background-light);
+  color: black;
+}
+
+body.dark {
+  background: var(--background-dark);
+  color: white;
+}
+
+/* === Auth UI === */
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+  position: relative;
+  padding: 1rem;
+}
+
+.top-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+/* Auth card */
+.auth-card {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  color: #000;
+  transition: all 0.3s;
+}
+
+body.dark .auth-card {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+/* Form layout */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.alert-emails {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* Inputs */
+.auth-input {
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 10px;
+  background: var(--input-light);
+  backdrop-filter: blur(5px);
+  color: #000;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+body.dark .auth-input {
+  background: var(--input-dark);
+  color: #fff;
+}
+
+/* Button */
+.auth-button {
+  padding: 0.8rem;
+  background: #2e86de;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.auth-button:hover {
+  background: #1b4f72;
+}
+
+/* Toggle text */
+.toggle-text {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.toggle-link {
+  color: #2e86de;
+  background: none;
+  border: none;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Make responsive */
+@media (max-width: 500px) {
+  .auth-card {
+    padding: 1.5rem;
+  }
+
+  .auth-button {
+    font-size: 0.9rem;
+  }
+
+  .auth-input {
+    font-size: 0.9rem;
+  }
+}
