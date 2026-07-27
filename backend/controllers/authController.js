@@ -20,7 +20,12 @@ exports.signup = async (req, res) => {
     await user.save();
 
     const token = generateToken(user._id);
-    res.cookie("token", token, { httpOnly: true });
+   res.cookie("token", token, {
+  httpOnly: true,
+  secure: true,
+  sameSite: "None",
+  maxAge: 7 * 24 * 60 * 60 * 1000,
+});
     res.json({ message: "Signup successful", user });
   } catch (err) {
     res.status(500).json({ error: err.message });
@@ -37,7 +42,12 @@ exports.login = async (req, res) => {
     if (!isMatch) return res.status(400).json({ error: "Invalid credentials" });
 
     const token = generateToken(user._id);
-    res.cookie("token", token, { httpOnly: true });
+res.cookie("token", token, {
+  httpOnly: true,
+  secure: true,
+  sameSite: "None",
+  maxAge: 7 * 24 * 60 * 60 * 1000,
+});
     res.json({ message: "Login successful", user });
   } catch (err) {
     res.status(500).json({ error: err.message });
