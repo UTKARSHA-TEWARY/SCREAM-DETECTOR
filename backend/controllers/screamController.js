@@ -28,7 +28,7 @@ exports.handleScreamDetection = async (req, res) => {
       flaskResponse = await axios.post(flaskUrl, formData, {
         headers: formData.getHeaders(),
         maxBodyLength: Infinity,
-        timeout: 20000, // 20 sec
+        timeout: 100000, // 20 sec
       });//Content-Type
 
 //Tells the server what format the request body is Tells the server what response format the client wants.
